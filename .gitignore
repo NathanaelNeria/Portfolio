@@ -43,3 +43,9 @@ next-env.d.ts
 # AI files
 AGENTS.md
 CLAUDE.md
+
+# PRD
+portfolio-prd.md
+
+# agents
+.agents/*

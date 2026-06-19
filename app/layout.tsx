@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Modern minimalist portfolio for job hunting and freelance work",
+  title: "Nathanael Neria — Web Developer & Frontend Engineer",
+  description: "Portfolio of Nathanael Neria, a web developer and frontend engineer building modern, accessible, and interactive web experiences.",
 };
 
 export default function RootLayout({
