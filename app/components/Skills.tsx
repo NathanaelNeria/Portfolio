@@ -1,33 +1,29 @@
-export default function Skills() {
-  const skills = [
-    { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML/CSS", "Javascript", "React Native"] },
-    { category: "Backend", items: ["Node.js", "Express", "PostgreSQL", "REST APIs"] },
-    { category: "Tools", items: ["Git", "VS Code", "Figma"] },
-  ];
+"use client";
 
+import { skills } from "../lib/data";
+import ScrollReveal from "./ScrollReveal";
+
+export default function Skills() {
   return (
-    <section id="skills" className="min-h-screen flex items-center justify-center px-6 py-20">
-      <div className="max-w-4xl w-full">
-        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-foreground text-center">
-          Skills
-        </h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {skills.map((skillGroup) => (
-            <div
-              key={skillGroup.category}
-              className="bg-card-bg border border-border rounded-lg p-6 hover:bg-card-hover transition-all hover:scale-105"
-            >
-              <h3 className="text-xl font-semibold mb-4 text-accent">{skillGroup.category}</h3>
-              <ul className="space-y-2">
-                {skillGroup.items.map((skill) => (
-                  <li key={skill} className="text-zinc-400 hover:text-foreground transition-colors">
-                    • {skill}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+    <section className="py-16 border-y border-border bg-card-bg/20">
+      <div className="max-w-5xl mx-auto px-6">
+        <ScrollReveal>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground text-center">
+            Skills & Technologies
+          </h2>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <div className="flex flex-wrap gap-3 justify-center">
+            {skills.map((skill, index) => (
+              <span
+                key={index}
+                className="px-4 py-2 bg-card-bg border border-border rounded-full text-foreground/70 hover:bg-card-hover hover:text-foreground hover:scale-105 transition-all cursor-default"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

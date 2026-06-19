@@ -3,33 +3,14 @@ export const skills = [
   "Next.js",
   "TypeScript",
   "Tailwind CSS",
-  "Framer Motion",
-  "Node.js",
-  "Frontend Developer",
+  "JavaScript"
 ];
 
 export const projects = [
   {
-    title: "Refero Design 3.0",
-    role: "UI / Frontend",
-    tech: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
-    href: "#",
-  },
-  {
-    title: "Refero Design 2.0",
-    role: "UI / Frontend",
-    tech: ["React", "TypeScript", "Tailwind CSS"],
-    href: "#",
-  },
-  {
-    title: "Refero Design",
-    role: "Animation / Web Design",
-    tech: ["Figma", "Framer Motion", "HTML/CSS"],
-    href: "#",
-  },
-  {
     title: "POS & Inventory Management System",
-    role: "Fullstack / Firebase",
+    role: "Frontend Developer",
+    description: "A comperhensive dashboard for managing reports, sales and inventory.",
     tech: ["React", "Firebase", "React Native", "Tailwind"],
     href: "#",
   },

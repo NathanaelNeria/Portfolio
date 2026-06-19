@@ -3,6 +3,8 @@
 import { Code2, Briefcase, Mail } from "lucide-react";
 import { socialLinks } from "../lib/data";
 import ScrollReveal from "./ScrollReveal";
+import Image from "next/image";
+import profilePicture from "../../public/Profile Picture.jpeg";
 
 const iconMap: Record<string, React.ReactNode> = {
   GitHub: <Code2 size={20} />,
@@ -16,10 +18,15 @@ export default function About() {
       <div className="max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <ScrollReveal>
-            <div className="w-full aspect-square max-w-md mx-auto rounded-full bg-gradient-to-br from-card-hover to-border border border-border flex items-center justify-center overflow-hidden">
-              <span className="text-8xl md:text-9xl font-semibold text-foreground/80">
-                NN
-              </span>
+            <div className="w-full aspect-square max-w-xs md:max-w-md mx-auto rounded-full bg-gradient-to-br from-card-hover to-border border border-border flex items-center justify-center overflow-hidden">
+              <Image
+                src={profilePicture}
+                alt="Profile"
+                width={448}
+                height={448}
+                quality={100}
+                className="w-full h-full object-cover object-top"
+              />
             </div>
           </ScrollReveal>
 
@@ -32,14 +39,12 @@ export default function About() {
                 Meet Nathanael
               </h2>
               <p className="text-lg text-foreground/60 leading-relaxed mb-6">
-                I am a frontend-focused web developer with a strong eye for design and
-                user experience. I enjoy building clean, performant, and accessible
-                interfaces that solve real problems.
+                I am learning frontend development and have built several web projects to improve my skills.
+                I focus on creating simple, clean, and user-friendly interfaces, while continuing to learn about responsive design and modern web practices.
               </p>
               <p className="text-lg text-foreground/60 leading-relaxed mb-8">
-                My approach combines attention to detail with pragmatic engineering —
-                from component systems and animations to responsive layouts and Core
-                Web Vitals.
+                I enjoy turning ideas into real applications and am always looking for ways to improve.
+                Open to opportunities and freelance work.
               </p>
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map((link) => (

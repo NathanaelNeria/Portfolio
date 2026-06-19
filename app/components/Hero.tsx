@@ -1,7 +1,9 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDown, Sparkles } from "lucide-react";
+import { ArrowDown } from "lucide-react";
+import Image from "next/image";
+import profilePicture from "../../public/Profile Picture 2.jpeg";
 
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion();
@@ -39,15 +41,16 @@ export default function Hero() {
       >
         <motion.div variants={item} className="mb-8 flex justify-center">
           <div className="relative">
-            <div className="w-40 h-40 md:w-52 md:h-52 rounded-full bg-gradient-to-br from-card-hover to-border border border-border flex items-center justify-center overflow-hidden">
-              <span className="text-5xl md:text-6xl font-semibold text-foreground/80">
-                NN
-              </span>
+            <div className="w-56 h-56 md:w-72 md:h-72 rounded-full bg-gradient-to-br from-card-hover to-border border border-border flex items-center justify-center overflow-hidden">
+              <Image
+                src={profilePicture}
+                alt="Profile"
+                width={448}
+                height={448}
+                quality={100}
+                className="w-full h-full object-cover object-top"
+              />
             </div>
-            <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-foreground text-background rounded-full text-xs font-medium flex items-center gap-1.5 shadow-lg">
-              <Sparkles size={12} />
-              Available for work
-            </span>
           </div>
         </motion.div>
 
@@ -69,9 +72,9 @@ export default function Hero() {
           variants={item}
           className="text-lg text-foreground/50 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          I craft clean, modern, and accessible web experiences. Passionate about
-          design systems, smooth interactions, and turning ideas into performant
-          digital products.
+          Aspiring Frontend Developer
+          <br />
+          Built several frontend projects and currently improving my skills. Open to opportunities and freelance work.
         </motion.p>
 
         <motion.div
