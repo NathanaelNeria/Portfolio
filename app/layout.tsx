@@ -29,7 +29,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        {children}
+        <div className="bg-mesh" aria-hidden="true">
+          <div className="bg-mesh-accent" />
+        </div>
+        <div className="relative z-10 flex flex-col min-h-full">
+          {children}
+        </div>
         <Analytics />
       </body>
     </html>

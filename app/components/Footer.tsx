@@ -23,7 +23,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="px-6 py-12 border-t border-border bg-card-bg/20">
+    <footer className="px-6 py-12 border-t border-glow-purple/10 bg-gradient-to-t from-glow-purple/5 to-transparent">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-center md:text-left">
           <p className="text-foreground font-semibold mb-1">Nathanael Neria</p>
@@ -52,7 +52,7 @@ export default function Footer() {
               target={link.name === "Email" ? undefined : "_blank"}
               rel={link.name === "Email" ? undefined : "noopener noreferrer"}
               aria-label={link.name}
-              className="p-2 border border-border rounded-full text-foreground/50 hover:text-foreground hover:bg-card-hover transition-all"
+              className="p-2 border border-glow-purple/20 rounded-full text-foreground/50 hover:text-foreground hover:bg-glow-purple/10 hover:border-glow-purple/40 transition-all"
             >
               {link.icon}
             </a>

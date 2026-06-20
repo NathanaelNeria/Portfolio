@@ -40,7 +40,7 @@ export default function Navigation() {
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <nav className="bg-background/70 backdrop-blur-md border-b border-border">
+      <nav className="bg-background/70 backdrop-blur-md border-b border-glow-purple/10">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <a
             href="#"
@@ -65,7 +65,7 @@ export default function Navigation() {
             ))}
             <button
               onClick={() => scrollTo("contact")}
-              className="px-5 py-2.5 bg-foreground text-background rounded-full text-sm font-medium hover:bg-accent-hover hover:scale-[1.02] transition-all"
+              className="px-5 py-2.5 bg-gradient-to-r from-glow-purple to-glow-blue text-white rounded-full text-sm font-medium hover:from-glow-purple/90 hover:to-glow-blue/90 hover:scale-[1.02] transition-all shadow-md shadow-glow-purple/20"
             >
               Get In Touch
             </button>
@@ -82,7 +82,7 @@ export default function Navigation() {
         </div>
 
         {open && (
-          <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
+          <div className="md:hidden border-t border-glow-purple/10 bg-background/95 backdrop-blur-md">
             <div className="px-6 py-4 flex flex-col gap-4">
               {navItems.map((item) => (
                 <button
@@ -95,7 +95,7 @@ export default function Navigation() {
               ))}
               <button
                 onClick={() => scrollTo("contact")}
-                className="px-5 py-2.5 bg-foreground text-background rounded-full text-sm font-medium hover:bg-accent-hover transition-colors"
+                className="px-5 py-2.5 bg-gradient-to-r from-glow-purple to-glow-blue text-white rounded-full text-sm font-medium hover:from-glow-purple/90 hover:to-glow-blue/90 transition-colors shadow-md shadow-glow-purple/20"
               >
                 Get In Touch
               </button>

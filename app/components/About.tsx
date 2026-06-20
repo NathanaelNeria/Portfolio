@@ -14,11 +14,11 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function About() {
   return (
-    <section className="px-6 py-24 md:py-32 bg-card-bg/20">
+    <section className="px-6 py-24 md:py-32 bg-gradient-to-r from-glow-cyan/5 via-transparent to-glow-purple/5">
       <div className="max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <ScrollReveal>
-            <div className="w-full aspect-square max-w-xs md:max-w-md mx-auto rounded-full bg-gradient-to-br from-card-hover to-border border border-border flex items-center justify-center overflow-hidden">
+            <div className="w-full aspect-square max-w-xs md:max-w-md mx-auto rounded-full bg-gradient-to-br from-glow-purple/30 via-glow-blue/20 to-glow-cyan/30 border border-glow-purple/20 flex items-center justify-center overflow-hidden">
               <Image
                 src={profilePicture}
                 alt="Profile"
@@ -53,7 +53,7 @@ export default function About() {
                     href={link.href}
                     target={link.name === "Email" ? undefined : "_blank"}
                     rel={link.name === "Email" ? undefined : "noopener noreferrer"}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 border border-border rounded-full text-sm text-foreground hover:bg-card-hover hover:text-accent transition-all"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 border border-glow-purple/20 rounded-full text-sm text-foreground hover:bg-glow-purple/10 hover:border-glow-purple/40 hover:text-accent transition-all"
                   >
                     {iconMap[link.name]}
                     {link.name}

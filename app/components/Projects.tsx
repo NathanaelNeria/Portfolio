@@ -17,14 +17,14 @@ export default function Projects() {
           </h2>
         </ScrollReveal>
 
-        <div className="border-t border-border">
+        <div className="border-t border-glow-purple/10">
           {projects.map((project, index) => (
             <ScrollReveal key={project.title} delay={index * 0.1}>
               <a
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block border-b border-border py-8 md:py-10 px-4 -mx-4 transition-all hover:bg-card-hover/50 rounded-lg"
+                className="group block border-b border-glow-purple/10 py-8 md:py-10 px-4 -mx-4 transition-all hover:bg-glow-purple/5 rounded-lg"
               >
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div className="flex-1 w-full">
@@ -32,7 +32,7 @@ export default function Projects() {
                       <h3 className="text-xl md:text-4xl font-semibold text-foreground group-hover:translate-x-2 transition-transform duration-300">
                         {project.title}
                       </h3>
-                      <span className="text-xs font-mono text-foreground/40 px-2 py-1 border border-border rounded-full">
+                      <span className="text-xs font-mono text-glow-purple/70 px-2 py-1 border border-glow-purple/20 rounded-full">
                         {project.role}
                       </span>
                     </div>
