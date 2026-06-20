@@ -1,12 +1,14 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 import profilePicture from "../../public/Profile Picture 2.jpeg";
 
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion();
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 500], [0, -50], { clamp: false });
 
   const container = {
     hidden: { opacity: 0 },
@@ -30,7 +32,7 @@ export default function Hero() {
 
   return (
     <section
-      id="about"
+      id="home"
       className="min-h-screen flex items-center justify-center px-6 pt-24 pb-16"
     >
       <motion.div
@@ -39,7 +41,7 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        <motion.div variants={item} className="mb-8 flex justify-center">
+        <motion.div variants={item} className="mb-8 flex justify-center" style={!prefersReducedMotion ? { y } : undefined}>
           <div className="relative">
             <div className="w-56 h-56 md:w-72 md:h-72 rounded-full bg-gradient-to-br from-glow-purple/30 via-glow-blue/20 to-glow-cyan/30 border border-glow-purple/20 flex items-center justify-center overflow-hidden">
               <Image
@@ -48,6 +50,8 @@ export default function Hero() {
                 width={448}
                 height={448}
                 quality={100}
+                priority
+                loading="eager"
                 className="w-full h-full object-cover object-top"
               />
             </div>
@@ -56,7 +60,7 @@ export default function Hero() {
 
         <motion.h1
           variants={item}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-foreground tracking-tight"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-glow-cyan via-glow-blue to-glow-purple bg-clip-text text-transparent tracking-tight"
         >
           Nathanael Neria
         </motion.h1>
@@ -65,16 +69,15 @@ export default function Hero() {
           variants={item}
           className="text-xl md:text-2xl text-foreground/70 mb-6 font-medium"
         >
-          Web Developer & Frontend Engineer
+          Frontend Developer
         </motion.p>
 
         <motion.p
           variants={item}
           className="text-lg text-foreground/50 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Aspiring Frontend Developer
-          <br />
-          Built several frontend projects and currently improving my skills. Open to opportunities and freelance work.
+          Junior Frontend Developer with a background in Presales. <br/>
+          I build functional, production-ready web applications, focused on delivering real business value.
         </motion.p>
 
         <motion.div
@@ -85,7 +88,7 @@ export default function Hero() {
             onClick={() =>
               document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
             }
-            className="px-8 py-3.5 bg-gradient-to-r from-glow-purple to-glow-blue text-white rounded-full font-medium hover:from-glow-purple/90 hover:to-glow-blue/90 hover:scale-[1.02] transition-all flex items-center justify-center gap-2 shadow-lg shadow-glow-purple/25"
+            className="px-8 py-3.5 bg-gradient-to-r from-glow-cyan to-glow-blue text-white rounded-full font-medium hover:from-glow-cyan/90 hover:to-glow-blue/90 hover:scale-[1.02] transition-all flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(6,182,212,0.5)]"
           >
             View My Work
             <ArrowDown size={18} />
@@ -94,7 +97,7 @@ export default function Hero() {
             onClick={() =>
               document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
             }
-            className="px-8 py-3.5 border border-glow-purple/30 text-foreground rounded-full font-medium hover:bg-glow-purple/10 hover:border-glow-purple/50 hover:scale-[1.02] transition-all"
+            className="px-8 py-3.5 border border-glow-cyan/30 text-foreground rounded-full font-medium hover:bg-glow-cyan/10 hover:border-glow-cyan/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:scale-[1.02] transition-all"
           >
             Get In Touch
           </button>

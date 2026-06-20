@@ -1,41 +1,51 @@
 export const skills = [
   "React",
-  "Next.js",
-  "TypeScript",
-  "Tailwind CSS",
-  "JavaScript"
+  "Tailwind",
+  "JavaScript",
+  "Firebase",
+  "HTML",
+  "CSS",
 ];
 
 export const projects = [
   {
     title: "POS & Inventory Management System",
     role: "Frontend Developer",
-    description: "A comperhensive dashboard for managing reports, sales and inventory.",
+    description: "A full-featured management dashboard currently used in production by active users to manage daily sales, real-time stock levels, and transaction reports. Built with React and Firebase, focusing on reliability, data persistence, and core business logic",
     tech: ["React", "Firebase", "React Native", "Tailwind"],
     href: "#",
+  },
+  {
+    title: "Product Demo Showcases",
+    role: "Frontend Developer (Integrator)",
+    description: "A collection of web and mobile apps I built to demo API and SDK features to B2B clients. My main focus here was quickly building the UI, handling data fetching, managing state and showing possible product use cases with React and Firebase.",
+    tech: ["React", "Firebase", "Flutter"],
+    href: "#",
+  },
+  {
+    title: "Financial Tracker",
+    role: "Frontend Developer",
+    description: "A personal finance app built as a learning project to understand Next.js and Supabase. It helps users monitor expenses and budget with insights into their spending patterns, all with a clean UI and real-time data synchronization.",
+    tech: ["Next.js", "Supabase", "Tailwind"],
+    href: "https://fintrack-nathan.vercel.app/",
   },
 ];
 
 export const services = [
   {
-    label: "Frontend Development",
-    tech: "React / Next.js",
-    description: "Build fast, scalable, and accessible web applications with modern React ecosystems.",
+    label: "Web Application Development",
+    tech: ["React", "Firebase", "Tailwind"],
+    description: "Build fully functional web applications from scratch, integrated with databases, user authentication, and responsive layouts.",
   },
   {
-    label: "Landing Page Design + Development",
-    tech: "Figma → Code",
-    description: "Design and develop high-converting landing pages with pixel-perfect implementation.",
+    label: "Design to Code (Landing Page)",
+    tech: ["UI Implementation"],
+    description: "Convert design to clean and responsive landing pages.",
   },
   {
-    label: "UI Implementation & Responsive Design",
-    tech: "Tailwind CSS",
-    description: "Translate designs into responsive, polished interfaces across all devices.",
-  },
-  {
-    label: "Performance Optimization",
-    tech: "Core Web Vitals",
-    description: "Audit and improve load times, rendering, and overall user experience.",
+    label: "Custom Dashboards & Internal Tools",
+    tech: ["Management System"],
+    description: "Develop custom dashboards and management systems (like POS and inventory tools) tailored to help streamline daily business operations.",
   },
 ];
 

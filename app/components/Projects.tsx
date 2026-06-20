@@ -17,14 +17,14 @@ export default function Projects() {
           </h2>
         </ScrollReveal>
 
-        <div className="border-t border-glow-purple/10">
+        <div className="border-t border-glow-cyan/10">
           {projects.map((project, index) => (
             <ScrollReveal key={project.title} delay={index * 0.1}>
               <a
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block border-b border-glow-purple/10 py-8 md:py-10 px-4 -mx-4 transition-all hover:bg-glow-purple/5 rounded-lg"
+                className="group block border-b border-glow-cyan/10 py-8 md:py-10 px-4 -mx-4 transition-all hover:bg-glow-cyan/5 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] rounded-lg"
               >
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div className="flex-1 w-full">
@@ -32,7 +32,7 @@ export default function Projects() {
                       <h3 className="text-xl md:text-4xl font-semibold text-foreground group-hover:translate-x-2 transition-transform duration-300">
                         {project.title}
                       </h3>
-                      <span className="text-xs font-mono text-glow-purple/70 px-2 py-1 border border-glow-purple/20 rounded-full">
+                      <span className="text-xs font-mono text-glow-cyan/70 px-2 py-1 border border-glow-cyan/20 rounded-full">
                         {project.role}
                       </span>
                     </div>
@@ -45,7 +45,7 @@ export default function Projects() {
                       {project.tech.map((tech) => (
                         <span
                           key={tech}
-                          className="text-xs md:text-sm text-foreground/50 font-mono"
+                          className="text-xs md:text-sm text-glow-cyan font-mono bg-cyan-950/50 border border-glow-cyan/60 px-2 py-1 rounded-full"
                         >
                           {tech}
                         </span>

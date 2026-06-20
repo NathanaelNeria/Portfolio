@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import ParallaxBackground from "./components/ParallaxBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,9 +30,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <div className="bg-mesh" aria-hidden="true">
-          <div className="bg-mesh-accent" />
-        </div>
+        <ParallaxBackground />
         <div className="relative z-10 flex flex-col min-h-full">
           {children}
         </div>

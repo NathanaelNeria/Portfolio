@@ -1,30 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { label: "About", id: "about" },
+  { label: "Home", id: "home" },
   { label: "Projects", id: "projects" },
   { label: "Services", id: "services" },
+  { label: "About", id: "about" },
   { label: "Contact", id: "contact" },
 ];
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const [lastY, setLastY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentY = window.scrollY;
-      setHidden(currentY > lastY && currentY > 80);
-      setLastY(currentY);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastY]);
 
   const scrollTo = (id: string) => {
     setOpen(false);
@@ -36,11 +24,9 @@ export default function Navigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
-        hidden ? "-translate-y-full" : "translate-y-0"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50"
     >
-      <nav className="bg-background/70 backdrop-blur-md border-b border-glow-purple/10">
+      <nav className="bg-background/70 backdrop-blur-md border-b border-glow-cyan/10">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <a
             href="#"

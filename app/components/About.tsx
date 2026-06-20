@@ -14,7 +14,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function About() {
   return (
-    <section className="px-6 py-24 md:py-32 bg-gradient-to-r from-glow-cyan/5 via-transparent to-glow-purple/5">
+    <section id="about" className="px-6 py-24 md:py-32 bg-gradient-to-r from-glow-cyan/5 via-transparent to-glow-purple/5">
       <div className="max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <ScrollReveal>
@@ -25,6 +25,7 @@ export default function About() {
                 width={448}
                 height={448}
                 quality={100}
+                loading="lazy"
                 className="w-full h-full object-cover object-top"
               />
             </div>
@@ -39,12 +40,12 @@ export default function About() {
                 Meet Nathanael
               </h2>
               <p className="text-lg text-foreground/60 leading-relaxed mb-6">
-                I am learning frontend development and have built several web projects to improve my skills.
-                I focus on creating simple, clean, and user-friendly interfaces, while continuing to learn about responsive design and modern web practices.
+              I’m a Junior Frontend Developer with a practical background in tech products.
+              I build clean, working web and mobile apps powered by APIs and SDKs.
               </p>
               <p className="text-lg text-foreground/60 leading-relaxed mb-8">
-                I enjoy turning ideas into real applications and am always looking for ways to improve.
-                Open to opportunities and freelance work.
+                I focus on building ready-to-use apps with React and Firebase—like the real POS & Inventory system I built that&apos;s currently used by active users.
+                Always open to full-time roles and freelance gigs!
               </p>
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map((link) => (
