@@ -41,7 +41,7 @@ export default function Hero() {
       >
         <motion.div variants={item} className="mb-8 flex justify-center">
           <div className="relative">
-            <div className="w-56 h-56 md:w-72 md:h-72 rounded-full bg-gradient-to-br from-card-hover to-border border border-border flex items-center justify-center overflow-hidden">
+            <div className="w-56 h-56 md:w-72 md:h-72 rounded-full bg-gradient-to-br from-glow-purple/30 via-glow-blue/20 to-glow-cyan/30 border border-glow-purple/20 flex items-center justify-center overflow-hidden">
               <Image
                 src={profilePicture}
                 alt="Profile"
@@ -85,7 +85,7 @@ export default function Hero() {
             onClick={() =>
               document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
             }
-            className="px-8 py-3.5 bg-foreground text-background rounded-full font-medium hover:bg-accent-hover hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
+            className="px-8 py-3.5 bg-gradient-to-r from-glow-purple to-glow-blue text-white rounded-full font-medium hover:from-glow-purple/90 hover:to-glow-blue/90 hover:scale-[1.02] transition-all flex items-center justify-center gap-2 shadow-lg shadow-glow-purple/25"
           >
             View My Work
             <ArrowDown size={18} />
@@ -94,7 +94,7 @@ export default function Hero() {
             onClick={() =>
               document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
             }
-            className="px-8 py-3.5 border border-border text-foreground rounded-full font-medium hover:bg-card-hover hover:scale-[1.02] transition-all"
+            className="px-8 py-3.5 border border-glow-purple/30 text-foreground rounded-full font-medium hover:bg-glow-purple/10 hover:border-glow-purple/50 hover:scale-[1.02] transition-all"
           >
             Get In Touch
           </button>

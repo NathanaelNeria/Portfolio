@@ -32,7 +32,7 @@ export default function Contact() {
           <div className="flex flex-col items-center gap-6">
             <a
               href="mailto:nathanaelneria@gmail.com"
-              className="group px-10 py-4 bg-foreground text-background rounded-full font-medium text-lg hover:bg-accent-hover hover:scale-[1.02] transition-all flex items-center gap-3"
+              className="group px-10 py-4 bg-gradient-to-r from-glow-purple to-glow-blue text-white rounded-full font-medium text-lg hover:from-glow-purple/90 hover:to-glow-blue/90 hover:scale-[1.02] transition-all flex items-center gap-3 shadow-lg shadow-glow-purple/25"
             >
               Get In Touch
               <ArrowRight
@@ -48,7 +48,7 @@ export default function Contact() {
                   href={link.href}
                   target={link.name === "Email" ? undefined : "_blank"}
                   rel={link.name === "Email" ? undefined : "noopener noreferrer"}
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-full text-foreground hover:bg-card-hover hover:text-accent transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-glow-purple/20 rounded-full text-foreground hover:bg-glow-purple/10 hover:border-glow-purple/40 hover:text-accent transition-all"
                 >
                   {link.icon}
                   {link.name}

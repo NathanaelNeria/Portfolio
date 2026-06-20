@@ -11,8 +11,8 @@ export default function Testimonial() {
         <div className="grid md:grid-cols-2 gap-6">
           {testimonials.map((testimonial, index) => (
             <ScrollReveal key={index} delay={index * 0.1}>
-              <div className="p-6 md:p-8 border border-border rounded-2xl bg-card-bg/50 h-full flex flex-col">
-                <Quote className="text-foreground/20 mb-4" size={40} />
+              <div className="p-6 md:p-8 border border-glow-blue/15 rounded-2xl bg-card-bg backdrop-blur-sm hover:border-glow-blue/30 transition-all h-full flex flex-col">
+                <Quote className="text-glow-purple/40 mb-4" size={40} />
                 <p className="text-lg md:text-xl text-foreground/80 leading-relaxed flex-1 mb-6">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>

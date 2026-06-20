@@ -6,7 +6,7 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function Services() {
   return (
-    <section id="services" className="px-6 py-24 md:py-32 bg-card-bg/20">
+    <section id="services" className="px-6 py-24 md:py-32 bg-gradient-to-b from-glow-blue/5 via-transparent to-glow-purple/5">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal>
           <p className="text-sm font-mono text-foreground/50 mb-4 uppercase tracking-wider">
@@ -20,9 +20,9 @@ export default function Services() {
         <div className="grid md:grid-cols-2 gap-6">
           {services.map((service, index) => (
             <ScrollReveal key={service.label} delay={index * 0.1}>
-              <div className="group p-6 md:p-8 border border-border rounded-2xl bg-background hover:bg-card-hover/50 transition-all hover:-translate-y-1 h-full flex flex-col">
+              <div className="group p-6 md:p-8 border border-glow-purple/15 rounded-2xl bg-card-bg backdrop-blur-sm hover:bg-glow-purple/5 hover:border-glow-purple/30 transition-all hover:-translate-y-1 h-full flex flex-col">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono text-foreground/40 px-2 py-1 border border-border rounded-full">
+                  <span className="text-xs font-mono text-glow-cyan/70 px-2 py-1 border border-glow-cyan/20 rounded-full">
                     {service.tech}
                   </span>
                   <div className="text-foreground/40 group-hover:text-foreground group-hover:translate-x-1 transition-all duration-300">
