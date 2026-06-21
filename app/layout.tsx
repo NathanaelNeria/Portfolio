@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nathanael Neria — Web Developer & Frontend Engineer",
-  description: "Portfolio of Nathanael Neria, a web developer and frontend engineer building modern, accessible, and interactive web experiences.",
+  title: "Nathanael Neria — Frontend Developer",
+  description: "Portfolio of Nathanael Neria, a frontend developer building modern, accessible, and interactive web experiences.",
 };
 
 export default function RootLayout({
@@ -28,6 +28,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
         <ParallaxBackground />

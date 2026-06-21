@@ -3,11 +3,15 @@
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "../lib/data";
 import ScrollReveal from "./ScrollReveal";
+import { motion } from "framer-motion";
+import { useSectionParallax } from "../lib/useParallax";
 
 export default function Projects() {
+  const { ref, y } = useSectionParallax<HTMLElement>([-30, 30]);
+
   return (
-    <section id="projects" className="px-6 py-24 md:py-32">
-      <div className="max-w-5xl mx-auto">
+    <section id="projects" ref={ref} className="px-6 py-24 md:py-32">
+      <motion.div className="max-w-5xl mx-auto" style={{ y }}>
         <ScrollReveal>
           <p className="text-sm font-mono text-foreground/50 mb-4 uppercase tracking-wider">
             Selected Work
@@ -17,14 +21,14 @@ export default function Projects() {
           </h2>
         </ScrollReveal>
 
-        <div className="border-t border-glow-cyan/10">
+        <div className="border-t border-glow-orange/10">
           {projects.map((project, index) => (
             <ScrollReveal key={project.title} delay={index * 0.1}>
               <a
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block border-b border-glow-cyan/10 py-8 md:py-10 px-4 -mx-4 transition-all hover:bg-glow-cyan/5 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] rounded-lg"
+                className="group block border-b border-glow-orange/10 py-8 md:py-10 px-4 -mx-4 transition-all hover:bg-glow-orange/5 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)] rounded-lg"
               >
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div className="flex-1 w-full">
@@ -32,7 +36,7 @@ export default function Projects() {
                       <h3 className="text-xl md:text-4xl font-semibold text-foreground group-hover:translate-x-2 transition-transform duration-300">
                         {project.title}
                       </h3>
-                      <span className="text-xs font-mono text-glow-cyan/70 px-2 py-1 border border-glow-cyan/20 rounded-full">
+                      <span className="text-xs font-mono text-glow-orange/70 px-2 py-1 border border-glow-orange/20 rounded-full">
                         {project.role}
                       </span>
                     </div>
@@ -45,7 +49,7 @@ export default function Projects() {
                       {project.tech.map((tech) => (
                         <span
                           key={tech}
-                          className="text-xs md:text-sm text-glow-cyan font-mono bg-cyan-950/50 border border-glow-cyan/60 px-2 py-1 rounded-full"
+                          className="text-xs md:text-sm text-glow-orange font-mono bg-orange-950/50 border border-glow-orange/60 px-2 py-1 rounded-full"
                         >
                           {tech}
                         </span>
@@ -60,7 +64,7 @@ export default function Projects() {
             </ScrollReveal>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

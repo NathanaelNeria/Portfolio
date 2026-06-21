@@ -1,21 +1,22 @@
 "use client";
 
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 import profilePicture from "../../public/Profile Picture 2.jpeg";
+import { useGlobalParallax } from "../lib/useParallax";
 
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion();
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, -50], { clamp: false });
+  const contentY = useGlobalParallax([0, -60]);
+  const imageY = useGlobalParallax([0, -60]);
 
   const container = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: prefersReducedMotion ? 0 : 0.12,
+        staggerChildren: !prefersReducedMotion ? 0.12 : 0,
         delayChildren: 0.1,
       },
     },
@@ -40,10 +41,11 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="visible"
+        style={{ y: contentY }}
       >
-        <motion.div variants={item} className="mb-8 flex justify-center" style={!prefersReducedMotion ? { y } : undefined}>
-          <div className="relative">
-            <div className="w-56 h-56 md:w-72 md:h-72 rounded-full bg-gradient-to-br from-glow-purple/30 via-glow-blue/20 to-glow-cyan/30 border border-glow-purple/20 flex items-center justify-center overflow-hidden">
+        <motion.div className="mb-8 flex justify-center" style={{ y: imageY }}>
+          <motion.div variants={item} className="relative">
+            <div className="w-72 h-72 md:w-88 md:h-88 rounded-full bg-gradient-to-br from-glow-purple/30 via-glow-orange/20 to-glow-cyan/30 border border-glow-purple/20 flex items-center justify-center overflow-hidden">
               <Image
                 src={profilePicture}
                 alt="Profile"
@@ -55,12 +57,12 @@ export default function Hero() {
                 className="w-full h-full object-cover object-top"
               />
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         <motion.h1
           variants={item}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-glow-cyan via-glow-blue to-glow-purple bg-clip-text text-transparent tracking-tight"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white bg-clip-text text-transparent tracking-tight"
         >
           Nathanael Neria
         </motion.h1>
@@ -88,19 +90,12 @@ export default function Hero() {
             onClick={() =>
               document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
             }
-            className="px-8 py-3.5 bg-gradient-to-r from-glow-cyan to-glow-blue text-white rounded-full font-medium hover:from-glow-cyan/90 hover:to-glow-blue/90 hover:scale-[1.02] transition-all flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(6,182,212,0.5)]"
+            className="px-8 py-3.5 bg-glow-orange text-white rounded-full font-medium hover:bg-glow-orange/90 hover:scale-[1.02] transition-all flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(249,115,22,0.5)]"
           >
             View My Work
             <ArrowDown size={18} />
           </button>
-          <button
-            onClick={() =>
-              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-            }
-            className="px-8 py-3.5 border border-glow-cyan/30 text-foreground rounded-full font-medium hover:bg-glow-cyan/10 hover:border-glow-cyan/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:scale-[1.02] transition-all"
-          >
-            Get In Touch
-          </button>
+          
         </motion.div>
       </motion.div>
     </section>

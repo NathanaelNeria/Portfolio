@@ -3,18 +3,23 @@
 import { Quote } from "lucide-react";
 import { testimonials } from "../lib/data";
 import ScrollReveal from "./ScrollReveal";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import { useGlobalParallax } from "../lib/useParallax";
 
 export default function Testimonial() {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 20], { clamp: false });
+  const bgY = useGlobalParallax([0, -60]);
+  const contentY = useGlobalParallax([0, -60]);
 
   return (
-    <motion.section 
-      className="px-6 py-24 md:py-32 bg-gradient-to-r from-glow-cyan/3 via-transparent to-glow-purple/3"
-      style={{ backgroundPositionY: y }}
+    <motion.section
+      className="relative px-6 py-24 md:py-32"
     >
-      <div className="max-w-5xl mx-auto">
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-glow-cyan/3 via-transparent to-glow-purple/3"
+        style={{ y: bgY }}
+        aria-hidden="true"
+      />
+      <motion.div className="relative z-10 max-w-5xl mx-auto" style={{ y: contentY }}>
         <div className="grid md:grid-cols-2 gap-6">
           {testimonials.map((testimonial, index) => (
             <ScrollReveal key={index} delay={index * 0.1}>
@@ -31,7 +36,7 @@ export default function Testimonial() {
             </ScrollReveal>
           ))}
         </div>
-      </div>
+      </motion.div>
     </motion.section>
   );
 }

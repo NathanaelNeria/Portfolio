@@ -1,6 +1,7 @@
 "use client";
 
-import { Code2, Briefcase, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import Image from "next/image";
 
 const quickLinks = [
   { label: "Projects", id: "projects" },
@@ -9,8 +10,8 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { name: "GitHub", href: "https://github.com/nathanaelneria", icon: <Code2 size={18} /> },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/nathanael-neria-2539b4117", icon: <Briefcase size={18} /> },
+  { name: "GitHub", href: "https://github.com/nathanaelneria", icon: <Image src="/Github_Invertocat_White.png" alt="GitHub" width={18} height={18} style={{ width: 'auto', height: 'auto' }} /> },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/nathanael-neria-2539b4117", icon: <Image src="/linkedin.png" alt="LinkedIn" width={18} height={18} /> },
   { name: "Email", href: "mailto:nathanaelneria@gmail.com", icon: <Mail size={18} /> },
 ];
 

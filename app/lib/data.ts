@@ -1,10 +1,10 @@
 export const skills = [
-  "React",
-  "Tailwind",
-  "JavaScript",
-  "Firebase",
-  "HTML",
-  "CSS",
+  { name: "React", logo: "/react.png" },
+  { name: "Tailwind", logo: "/tailwindcss-logotype-white.svg" },
+  { name: "JavaScript", logo: "/js.png" },
+  { name: "Firebase", logo: "/Primary_Vertical_Lockup_Full_Color_Inverted.png" },
+  { name: "HTML", logo: "/html.png" },
+  { name: "CSS", logo: "/css-3.png" },
 ];
 
 export const projects = [

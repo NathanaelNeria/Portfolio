@@ -1,18 +1,23 @@
 "use client";
 
-import { ArrowRight, Mail, Code2, Briefcase } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useSectionParallax } from "../lib/useParallax";
 
 const socialLinks = [
-  { name: "GitHub", href: "https://github.com/nathanaelneria", icon: <Code2 size={18} /> },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/nathanael-neria-2539b4117", icon: <Briefcase size={18} /> },
+  { name: "GitHub", href: "https://github.com/nathanaelneria", icon: <Image src="/GitHub_Invertocat_White.png" alt="GitHub" width={18} height={18} style={{ width: 'auto', height: 'auto' }} /> },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/nathanael-neria-2539b4117", icon: <Image src="/linkedin.png" alt="LinkedIn" width={18} height={18} /> },
   { name: "Email", href: "mailto:nathanaelneria@gmail.com", icon: <Mail size={18} /> },
 ];
 
 export default function Contact() {
+  const { ref, y } = useSectionParallax<HTMLElement>([-30, 30]);
+
   return (
-    <section id="contact" className="px-6 py-24 md:py-32">
-      <div className="max-w-5xl mx-auto">
+    <section id="contact" ref={ref} className="px-6 py-24 md:py-32">
+      <motion.div className="max-w-5xl mx-auto" style={{ y }}>
         <ScrollReveal>
           <div className="text-center mb-16">
             <p className="text-sm font-mono text-foreground/50 mb-4 uppercase tracking-wider">
@@ -32,7 +37,7 @@ export default function Contact() {
           <div className="flex flex-col items-center gap-6">
             <a
               href="mailto:nathanaelneria@gmail.com"
-              className="group px-10 py-4 bg-gradient-to-r from-glow-purple to-glow-blue text-white rounded-full font-medium text-lg hover:from-glow-purple/90 hover:to-glow-blue/90 hover:scale-[1.02] transition-all flex items-center gap-3 shadow-lg shadow-glow-purple/25"
+              className="group px-10 py-4 bg-glow-orange text-white rounded-full font-medium text-lg hover:bg-glow-orange/90 hover:scale-[1.02] transition-all flex items-center gap-3 shadow-lg shadow-glow-orange/25"
             >
               Get In Touch
               <ArrowRight
@@ -57,7 +62,7 @@ export default function Contact() {
             </div>
           </div>
         </ScrollReveal>
-      </div>
+      </motion.div>
     </section>
   );
 }

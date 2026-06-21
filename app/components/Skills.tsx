@@ -2,36 +2,50 @@
 
 import { skills } from "../lib/data";
 import ScrollReveal from "./ScrollReveal";
-import { motion, useScroll, useTransform } from "framer-motion";
-
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useGlobalParallax } from "../lib/useParallax";
 export default function Skills() {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 30], { clamp: false });
+  const bgY = useGlobalParallax([0, -60]);
+  const contentY = useGlobalParallax([0, -60]);
+
+  // Tambahin logo untuk setiap skills yang ada
 
   return (
-    <motion.section 
-      className="py-16 border-y border-glow-cyan/10 bg-gradient-to-r from-glow-cyan/5 via-transparent to-glow-blue/5"
-      style={{ backgroundPositionY: y }}
+    <motion.section
+      className="relative py-16 border-y border-glow-cyan/10"
     >
-      <div className="max-w-5xl mx-auto px-6">
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-glow-cyan/5 via-transparent to-glow-orange/5"
+        style={{ y: bgY }}
+        aria-hidden="true"
+      />
+      <motion.div className="relative z-10 max-w-5xl mx-auto px-6" style={{ y: contentY }}>
         <ScrollReveal>
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground text-center">
             Skills & Technologies
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="flex flex-wrap gap-12 justify-center">
             {skills.map((skill, index) => (
               <span
                 key={index}
-                className="px-4 py-2 bg-cyan-950/50 text-glow-cyan border border-glow-cyan/60 rounded-full hover:bg-glow-cyan/10 hover:text-foreground hover:border-glow-cyan/50 hover:scale-105 transition-all cursor-default"
+                className="flex flex-col items-center gap-2 hover-zoom cursor-default"
               >
-                {skill}
+                <Image
+                  src={skill.logo}
+                  alt={skill.name}
+                  width={80}
+                  height={80}
+                  className="w-20 h-20 object-contain"
+                />
+                {skill.name}
               </span>
             ))}
           </div>
         </ScrollReveal>
-      </div>
+      </motion.div>
     </motion.section>
   );
 }
