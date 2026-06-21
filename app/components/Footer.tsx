@@ -10,9 +10,9 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { name: "GitHub", href: "https://github.com/nathanaelneria", icon: <Image src="/Github_Invertocat_White.png" alt="GitHub" width={18} height={18} style={{ width: 'auto', height: 'auto' }} /> },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/nathanael-neria-2539b4117", icon: <Image src="/linkedin.png" alt="LinkedIn" width={18} height={18} /> },
-  { name: "Email", href: "mailto:nathanaelneria@gmail.com", icon: <Mail size={18} /> },
+  { name: "GitHub", href: "https://github.com/nathanaelneria", icon: <Image src="/GitHub_Invertocat_White.png" alt="GitHub" width={20} height={20} className="w-5 h-5 object-contain" /> },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/nathanael-neria-2539b4117", icon: <Image src="/linkedin.png" alt="LinkedIn" width={20} height={20} className="w-5 h-5 object-contain" /> },
+  { name: "Email", href: "mailto:nathanaelneria@gmail.com", icon: <Mail size={20} className="w-5 h-5" /> },
 ];
 
 export default function Footer() {
